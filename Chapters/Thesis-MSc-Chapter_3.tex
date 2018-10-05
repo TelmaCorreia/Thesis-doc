@@ -12,7 +12,7 @@
 The main goal of this work is developing an end-user application for energy trading, that uses blockchain as a payment method and contemporarily provides \ac{EF} through a low-cost and easy to use the system.
 
 
-Taking into account lessons learned from previous studies in both areas of \ac{EFS} and \ac{P2P} energy trading, it was designed as a mobile application (developed for Android since it is open source).
+Taking into account lessons learned from previous studies in both areas of \ac{EFS} and \ac{P2P} energy trading, the system was designed as a mobile application (developed for Android since it is open source).
 
 
 
@@ -149,7 +149,7 @@ The home provides information about (\cref{fig:ps4}, 1st on the left):
     \item current production and consumption (line chart on the top of the screen);
     \item the battery status (amount of energy stored) (\cref{fig:ps5}, 1st on the left);
     \item a summary of transactions carried out that day. Such information is presented through a heat map so to help the user identify at a glance at what time of the day (s)he buys and sell more energy. Further details about each transaction can be accessed by selecting the green arrow on the top of the heat map (\cref{fig:ps5}, the image in the middle);
-    \item the share of RES in the user weekly energy consumption (figure eee, 1st on the right): here the user can quickly check how much RES is using in the current week (donut chart) and how is (s)he doing in comparison to the other users (ranging from “very good”, represented by a smiling face, to “you should do better”, represented by a frowning face). The comparison with other users is always coupled with an encouraging sentence, in order to avoid a negative feedback. Data are updated every minute.
+    \item the share of RES in the user weekly energy consumption (\cref{fig:ps5}, 1st on the right): here the user can quickly check how much RES is using in the current week (donut chart) and how is (s)he doing in comparison to the other users (ranging from “very good”, represented by a smiling face, to “you should do better”, represented by a frowning face). The comparison with other users is always coupled with an encouraging sentence, in order to avoid a negative feedback. Data are updated every minute.
 \end{itemize}
 
 \begin{figure}[h]
@@ -158,7 +158,7 @@ The home provides information about (\cref{fig:ps4}, 1st on the left):
 \caption{Home menu tabs}
 \label{fig:ps5}
 \end{figure}
-\textbf{Histórico:} (\cref{fig:ps5}, 2nd on the left)
+\textbf{Histórico:} (\cref{fig:ps4}, 2nd on the left)
 Through this feature, users can access their own past consumption and production data, with three levels of temporal granularity (days, weeks, months). The information is illustrated through a stacked bars graph as well as a table (on the bottom of the graph, which also serves as a legend to the graph). Not only overall production and consumption are presented, but also their respective breakdown (e.g. consumption is divided in energy bought from the supplier, from neighbours, and from self-consumption), so the user can leverage this information to modify his/her buying and selling criteria (if needed).
 \Cref{fig:ps6} represents an example the information presented to users in the “histórico”.
 
@@ -184,7 +184,7 @@ In addition, to help users compare their total production (d1) and consumption (
 \end{figure}
 
 
-As shown in figure fff, the graph is always combined with a table which serves as a legend for the graph itself and provides detailed information about energy use so to prevent the user to misinterpret the visualization or, even worst, think there is something wrong with the data. For example, a user could get confused noticing that total production (green line) always exceeds the sum of “energy surplus” and “self-consumption”. An alert in the table explains that this is due to the fact that when using a Battery Energy Storage System there is always a loss of energy (about 20\%)\footnote{This is better explained in the \ref{psetms}}. In addition, in case the energy sold to neighbours and/or stored in the battery exceeds the “energy surplus” of that day/week/month, through an info button the user is provided with an explanation for that - i.e. there was still energy stored in the battery from the previous day/week/month.
+As shown in  \cref{fig:ps6}, the graph is always combined with a table which serves as a legend for the graph itself and provides detailed information about energy use so to prevent the user to misinterpret the visualization or, even worst, think there is something wrong with the data. For example, a user could get confused noticing that total production (green line) always exceeds the sum of “energy surplus” and “self-consumption”. An alert in the table explains that this is due to the fact that when using a Battery Energy Storage System there is always a loss of energy (about 20\%)\footnote{This is better explained in the \ref{psetms}}. In addition, in case the energy sold to neighbours and/or stored in the battery exceeds the “energy surplus” of that day/week/month, through an info button the user is provided with an explanation for that - i.e. there was still energy stored in the battery from the previous day/week/month.
 Last but not least, every time the battery is full, an alert button will appear (\cref{fig:ps8}). If the user presses it, a dialog opens up and warns him that he is “wasting” his production because cannot store energy in the battery anymore.
 
 
@@ -197,7 +197,6 @@ Last but not least, every time the battery is full, an alert button will appear 
 
 
 \textbf{ Transações: buying/selling criteria:} (\cref{fig:ps9})
-
 
 This section is divided into three main sub-sections: 1) manual definition of criteria for selling energy; 2) manual definition of criteria for buying energy; 3) list of all transactions performed.
 The core of the application is the manual definition of buying/selling criteria. The only mandatory field here is “price for kWh”. The user is indeed required to define at what price (s)he is willing to buy as well as sell energy. In both cases, two are the possible options: 1) a fixed price (“maximum” fixed price in the case of buying criteria); 2) a price tied to the cost of energy he/she buys from the electricity company (in the case of Madeira it is \ac{EEM}). The latter option is targeted to consumers that are subjected to dynamic pricing (i.e. have a bi-horária or tri-horária tariff), thus pay energy at different prices at different times of the day. Concerning “energy selling”, such price could be equal or bigger to the cost of energy (s)he buys from \ac{EEM} at a given moment while, regarding “energy buying”, the users set a maximum price which could be equal or lower than the cost of energy bought from \ac{EEM} at a given time. Results from the \ac{SINAIS} project revealed that many consumers are not aware of the cost of energy and, sometimes, don’t even know their own tariff. Therefore, in order to support users in defining the price for the energy they are buying and/or selling, an “information button” was added, which opens up a dialog providing information about the user’s tariff and relative energy prices. 
@@ -276,7 +275,7 @@ Through the wallet, users can check their account details (e.g.balance; daily, w
 
 
 
-The query for “balance status” could take a while to be executed, depending on IOTA node state. The same might happen when the user generates  new destination addresses (see §2.2.1.3). With this respect, it should be pointed out that each transaction carried out by the user as seller requires a new address. When (s)he runs out of addresses, receives a push notification and an email asking to generate new addresses. To make the payment, the user has to press the “pagar as minhas despesas” button. If the user has not enough balance, the payment will be rejected by the node. It is, of course,  user responsibility to have enough balance to keep trading.
+The query for balance information could take a while to be executed, depending on IOTA node state. The same might happen when the user generates  new destination addresses (see \cref{seciotatech}). With this respect, it should be pointed out that each transaction carried out by the user as seller requires a new address. When (s)he runs out of addresses, receives a push notification and an email asking to generate new addresses. To make the payment, the user has to press the “pagar as minhas despesas” button. If the user has not enough balance, the payment will be rejected by the node. It is, of course,  user responsibility to have enough balance to keep trading.
 
 
 Since the application has no database, SharedPreferences is used to persistent store user tokens (Bearer token and Firebase token), therefore it does not work in offline mode. 
@@ -298,12 +297,12 @@ The ETMS was built using java with Spring framework, this option was considered 
 \end{figure}
 
 %%%%%%%%%%%%%%%% REFER ATTACHMENTS %%%%%%%%%%%%%%%
-The Users Manager layer contains all the endpoints (\ac{API} attached) available for an authenticated client. The authentication scheme used is Bearer Authentication, that is part of OAUTH 2.0\footnote{Authorization protocol that gives an \ac{API} client limited access to user data on a web server.} in RFC 6750\footnote{\url{https://tools.ietf.org/html/rfc6750}}. This Bearer token is generated on the login request and has to be used by the client in the “Authorization header” for all endpoints (except login and register). The API requests used to feed the client application are GET, POST, UPDATE and DELETE. The full \ac{UML} database schema, with all parameters of each table and respective relations, can be found in the attachments. From now on, any reference to a database table can be founded in that schema. 
+The Users Manager layer contains all the endpoints (\cref{chapter:appendixA}) available for an authenticated client. The authentication scheme used is Bearer Authentication, that is part of OAUTH 2.0\footnote{Authorization protocol that gives an \ac{API} client limited access to user data on a web server.} in RFC 6750\footnote{\url{https://tools.ietf.org/html/rfc6750}}. This Bearer token is generated on the login request and has to be used by the client in the “Authorization header” for all endpoints (except login and register). The \ac{API} requests used to feed the client application are GET, POST, UPDATE and DELETE. The full \ac{UML} database schema, with all parameters of each table and respective relations, can be found in \cref{chapter:appendixB}. From now on, any reference to a database table can be founded in that schema. 
 
 
 A trading is the combination of three main asynchronous tasks. “Start transactions” (\cref{fig:ps13}), “Verify transactions” and “Stop Transactions” (\cref{fig:ps15}).
 
-\textbf{Start Transactions:} Once a user has set his parameters for trading energy and activated the trading by sliding the switch to the on position, an entry with user id and sales/bough settings id are added in the database (in want\_sell or want\_buy table respectively). Such a combination of user id/settings id is unique. When the user starts a transaction or turns off the trading switch, this entry is removed from the table. Each minute the system verifies if there are entries in the want\_sell table and, for each entry found, the server runs the match algorithm to find a buyer whose demand for energy matches the seller settings - e.g. a seller that offers solar energy to neighbours at the same price (s)he pays energy to EEM (let’s imagine, (s)he has “simples” tariff thus pays always 0,1629 € per kWh) will match and thus being able to trade with a consumer who has selected a maximum buying price that is equal or higher than 0,1629€/kWh. 
+\textbf{Start Transactions:} Once a user has set his parameters for trading energy and activated the trading by sliding the switch to the on position, an entry with user id and sales/bough settings id are added in the database (in want\_sell or want\_buy table respectively). Such a combination of user id/settings id is unique. When the user starts a transaction or turns off the trading switch, this entry is removed from the table. Each minute the system verifies if there are entries in the want\_sell table and, for each entry found, the server runs the match algorithm to find a buyer whose demand for energy matches the seller settings - e.g. a seller that offers solar energy to neighbours at the same price (s)he pays energy to \ac{EEM} (let’s imagine, (s)he has “simples” tariff thus pays always 0,1629 € per kWh) will match and thus being able to trade with a consumer who has selected a maximum buying price that is equal or higher than 0,1629€/kWh. 
 
 \begin{figure}[h]
 \centering
@@ -312,13 +311,13 @@ A trading is the combination of three main asynchronous tasks. “Start transact
 \label{fig:ps13}
 \end{figure}
 
-So, by selecting a specific selling price, sellers are guaranteed they will always sell energy for neither more nor less than that price. On the contrary, buyers cannot know in advance the actual amount they will pay for kWh. They are only guaranteed it will never be higher than the one they have set. In order to ensure impartiality, both sellers and matching buyers lists are shuffled. Every time the system finds a match, a temporary transaction is created, while the fields corresponding to the amount of energy consumed (by the buyer)  and remaining surplus (of the seller) are updated in the database. The transaction duration is configurable, however, we set one hour as a fixed time to perform each transaction. This choice was made after the analysis of historical consumption and production data of our users which lead us to conclude that, in less than one hour, the amount of energy exchanged could easily be so low  that the rounded value presented to the users is likely to be zero . 
+So, by selecting a specific selling price, sellers are guaranteed they will always sell energy for neither more nor less than that price. On the contrary, buyers cannot know in advance the actual amount they will pay for kWh. They are only guaranteed it will never be higher than the one they have set. In order to ensure impartiality, both sellers and matching buyers lists are shuffled. Every time the system finds a match, a temporary transaction is created, while the fields corresponding to the amount of energy consumed (by the buyer)  and remaining surplus (of the seller) are updated in the database. The transaction duration is configurable, however, we set one hour as a fixed time to perform each transaction. This choice was made after the analysis of historical consumption and production data of our users which lead us to conclude that, in less than one hour, the amount of energy exchanged could easily be so low  that the rounded value presented to the users is likely to be zero. 
 
 
 
 
 
-\textbf{Verify transactions:} A possible scenario is that a seller has the trading on but no energy stored in the battery to sell. For this reason, every two minutes the system runs a verification transactions task \cref{fig:ps14}). By performing this task, it verifies if the consumed energy in a temporary transaction is greater than zero (the system only verifies transactions running over five minutes). In case the value of a transaction is not higher than zero, it will be immediately stopped. The respective entry in the temporary\_transactions table is deleted and want\_buy and want\_sell tables are again updated.
+\textbf{Verify transactions:} A possible scenario is that a seller has the trading on but no energy stored in the battery to sell. For this reason, every two minutes the system runs a verification transactions task (\cref{fig:ps14}). By performing this task, it verifies if the consumed energy in a temporary transaction is greater than zero (the system only verifies transactions running over five minutes). In case the value of a transaction is not higher than zero, it will be immediately stopped. The respective entry in the temporary\_transactions table is deleted and want\_buy and want\_sell tables are again updated.
 
 
 \begin{figure}[h]
