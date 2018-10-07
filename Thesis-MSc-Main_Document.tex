@@ -42,6 +42,7 @@
 % #############################################################################
 % #############################################################################
 \usepackage{nameref}
+\usepackage{eurosym}
 \begin{document}
 %
 % Add PDF bookmark 
@@ -241,6 +242,12 @@
 %% Second Appendix
 \pdfbookmark[1]{Appendix B}{appendix}
 \input{./Chapters/Thesis-MSc-AppendixB.tex}
+%% If Printing on DOUBLE SIDED pages, the second page should be white.
+%% Otherwise, comment the following command:
+\cleardoublepage
+%% Third Appendix
+\pdfbookmark[1]{Appendix C}{appendix}
+\input{./Chapters/Thesis-MSc-AppendixC.tex}
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
 \cleardoublepage
