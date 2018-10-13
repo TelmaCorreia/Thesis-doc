@@ -75,7 +75,7 @@ Then, the stick notes were sorted into groups through an affinity diagram, looki
 The navigation tree and some basic requirements of \ac{UI}/\ac{UX} were also defined. First of all, the \ac{UI} has to be simple (but not simplistic), user-friendly, clear and appealing. Data provided through the app must be detailed in order to avoid misunderstandings but, contemporarily, limited to the most relevant ones in order to avoid information overload. The “setting” should be designed targeting those users that have a limited knowledge of energy. Also, negative feedback should be avoided.
 
 
-The resulting wireframes were subjected to a quick heuristic evaluation of layout elements, function, and flow, after which possible bottlenecks were identified and removed. Then, a low-fidelity prototype was realized and tested with a small group of researchers and students from the Madeira Interactive Technologies Institute, all with a limited knowledge of energy.
+The resulting wire frames were subjected to a quick heuristic evaluation of layout elements, function, and flow, after which possible bottlenecks were identified and removed. Then, a low-fidelity prototype was realized and tested with a small group of researchers and students from the Madeira Interactive Technologies Institute, all with a limited knowledge of energy.
 Participants in the pilot test performed the following tasks:
 \begin{enumerate}
     \item Registration of a new account. All participants concluded that task successfully. Since the registration process requires users to input some information about their \ac{PV} installation (in prosumers mode) and contract with the energy supplier, the \ac{UI} included tips to help users filling out the input fields. Nevertheless, some of the participants did not see them immediately, suggesting us to make them more noticeable. 
@@ -111,7 +111,7 @@ At the end of each user test, participants were also asked for comments and opin
 \label{fig:ps2}
 \end{figure}
 
-On the basis of the above-mentioned results, another low-fi prototype was designed and tested with different subjects. The changes made resulted resulted in the improvement of users performance allowing us to start designing the \ac{UI} mockup.
+On the basis of the above-mentioned results, another low-fidelity prototype was designed and tested with different subjects. The changes made resulted resulted in the improvement of users performance allowing us to start designing the \ac{UI} mockup.
 
 In terms of flow, we tried to keep the registration process as quick as possible. Creating a new account requires three main steps (see \cref{fig:ps3}):
 \begin{enumerate}
@@ -285,8 +285,8 @@ Since the application has no database, SharedPreferences is used to persistent s
 \section{Power Share Energy Trading Management System}\label{psetms}
 
 
-\Cref{fig:ps12} shows an overview of the ETMS (the integration of IOTA technology in the ETMS will be explained in the next section). The Android application is connected with the ETMS, which in its turn is connected with the smart meters providing information about energy production and consumption for each user. Both communications are made by a REST API using the https protocol with authentication. The https protocol was used for security reasons, like prevent man--in--the--middle attacks -- i.e. an attacker alters the content of the messages sent between the application--server and smart meters-server.
-The ETMS was built using java with Spring framework, this option was considered regarding their advantages like the embedded Tomcat (java web server), following the \ac{MVC} architecture given the maintainability, testability, and scalability of this approach. The database used is MySql.
+\Cref{fig:ps12} shows an overview of the \ac{ETMS} (the integration of IOTA technology in the \ac{ETMS} will be explained in the next section). The Android application is connected with the \ac{ETMS}, which in its turn is connected with the smart meters providing information about energy production and consumption for each user. Both communications are made by a REST \ac{API} using the https protocol with authentication. The https protocol was used for security reasons, like prevent man--in--the--middle attacks -- i.e. an attacker alters the content of the messages sent between the application--server and smart meters-server.
+The \ac{ETMS} was built using java with Spring framework, this option was considered regarding their advantages like the embedded Tomcat (java web server), following the \ac{MVC} architecture given the maintainability, testability, and scalability of this approach. The database used is MySql.
 
 
 \begin{figure}[h]
