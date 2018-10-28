@@ -12,22 +12,22 @@
 The main goal of this work is developing an end-user application for \ac{ET}, that uses blockchain as a payment method and contemporarily provides \ac{EF} through a low-cost and easy to use the system.
 
 
-Taking into account lessons learned from previous studies in both areas of \ac{EFS} and \ac{P2P} \ac{ET}, the system was designed as a mobile application (developed for Android since it is open source).
+Taking into account lessons learned from previous studies in both areas of \ac{EFS} and \ac{P2P} \ac{ET}, the system was designed as a mobile application (developed for Android).
 
 
 
-Despite all participants in the field study aimed at testing the app are prosumers, \ac{PS} targets also consumers. Therefore, the motto while designing the application was “keep it simple”, that is to say, easy to use and understand for the wider audience possible (including people with a limited knowledge on energy).
+Despite all participants in the field study aimed at testing the app are prosumers, Power Share targets also consumers. Therefore, the motto while designing the application was “keep it simple”, that is to say, easy to use and understand for the wider audience possible (including people with a limited knowledge about energy, blockchain and related technologies).
 
 
 
-\ac{PS} allows automated energy tradings between neighbors. It provides users with the opportunity to set the parameters for buying and/or selling energy, as well as to access and monitor data regarding their energy consumption, production (in case the user is a prosumer), and transactions.
+Power Share allows automated energy tradings between neighbors. It provides users with the opportunity to set the parameters for buying and/or selling energy, as well as to access and monitor data regarding their energy consumption, production (in case the user is a prosumer), and transactions.
 
 
 
-The application is connected with \ac{PS} \ac{ETMS} that is responsible for managing users’ accounts, managing energy demand and offer, and providing data about the users’ overall energy consumption and production. Data are collected through a smart meter, installed in each household participating in the study, which measures production and consumption. The integration of IOTA technology will serve the purpose of carrying out the transactions between neighbors in a decentralized fashion.
+The application is connected with Power Share \ac{ETMS} that is responsible for managing users’ accounts, managing energy demand and offer, and providing data about the users’ overall energy consumption and production. Data is collected through a smart meter, installed in each household participating in the study, which measures production and consumption. The integration of IOTA technology will serve the purpose of carrying out the transactions between neighbors in a decentralized fashion.
 
 
-\Cref{fig:ps} shows the architecture of the system. The grey arrows represent the regulated electricity network (the power grid*), which is managed by the local \ac{DSO} and is therefore independent of our system. Each household has its own solar PV system and BESS*. When PowerShare \ac{ETMS} find a match between energy demand and offer, it automatically starts the transaction, which is then paid using IOTA node as a service.  
+\Cref{fig:ps} depicts the architecture of the system. The grey arrows represent the regulated electricity network (the power grid*), which is managed by the local \ac{DSO} and is therefore independent of our system. Each household has its own solar PV system and BESS*. When PowerShare \ac{ETMS} find a match between energy demand and offer, it automatically starts the transaction, which is then paid using IOTA node as a service.  
 
 \begin{figure}[h]
 \centering
@@ -37,12 +37,12 @@ The application is connected with \ac{PS} \ac{ETMS} that is responsible for mana
 \end{figure}
 
 
-The following sections provide a detailed description of both front- and back-end of the application, as well as of the integration of IOTA technology. Requirements and constraints that led to the final solution are also presented. 
+The following sections provide a detailed description of both front-end and the back-end of Power Share, as well as of the integration of IOTA technology. We also discuss the requirements and constraints that led to the final solution. 
 
 \section{Power Share Application}
 
 
-This section describes all the process of design and implementation of the front-end of the \ac{PS} mobile application.
+This section describes all the process of design and implementation of the front-end of the Power Share mobile application.
 
 
 
@@ -75,7 +75,7 @@ Then, the stick notes were sorted into groups through an affinity diagram, looki
 The navigation tree and some basic requirements of \ac{UI}/\ac{UX} were also defined. First of all, the \ac{UI} has to be simple (but not simplistic), user-friendly, clear and appealing. Data provided through the app must be detailed in order to avoid misunderstandings but, contemporarily, limited to the most relevant ones in order to avoid information overload. The “setting” should be designed targeting those users that have a limited knowledge of energy. Also, negative feedback should be avoided.
 
 
-The resulting wire frames were subjected to a quick heuristic evaluation of layout elements, function, and flow, after which possible bottlenecks were identified and removed. Then, a low-fidelity prototype was realized and tested with a small group of researchers and students from the Madeira Interactive Technologies Institute, all with a limited knowledge of energy.
+The resulting wire frames were subjected to a heuristic evaluation of layout elements, function, and flow, after which possible bottlenecks were identified and removed. Then, a low-fidelity prototype was realized and tested with a small group of researchers and students from the Madeira Interactive Technologies Institute, all with a limited knowledge of energy.
 Participants in the pilot test performed the following tasks:
 \begin{enumerate}
     \item Registration of a new account. All participants concluded that task successfully. Since the registration process requires users to input some information about their \ac{PV} installation (in prosumers mode) and contract with the energy supplier, the \ac{UI} included tips to help users filling out the input fields. Nevertheless, some of the participants did not see them immediately, suggesting us to make them more noticeable. 
@@ -111,7 +111,7 @@ At the end of each user test, participants were also asked for comments and opin
 \label{fig:ps2}
 \end{figure}
 
-On the basis of the above-mentioned results, another low-fidelity prototype was designed and tested with different subjects. The changes made resulted resulted in the improvement of users performance allowing us to start designing the \ac{UI} mockup.
+On the basis of the above-mentioned results, another low-fidelity prototype was designed and tested with different subjects. The changes made resulted in the improvement of users performance allowing us to start designing the \ac{UI} mockup.
 
 In terms of flow, we tried to keep the registration process as quick as possible. Creating a new account requires three main steps (see \cref{fig:ps3}):
 \begin{enumerate}
@@ -240,7 +240,7 @@ An overflow menu is placed in the top app bar, which allows the user to access s
 
 \subsection{Implementation}
 
-The rationale behind a developing a mobile application for android is that it is  more versatile and accessible since android is an open source system. In order for the app to quickly respond to changes, the Model View-ViewModel (MVVM) design pattern was adopted. This pattern has 3 main layers and lots of advantages:
+The rationale behind developing the mobile application for android was because it is  more versatile and accessible since android is an open source system. In order for the app to quickly respond to changes, the Model View-ViewModel (MVVM) design pattern was adopted. This pattern has 3 main layers and lots of advantages:
 \begin{itemize}
     \item \textbf{The View:} it basically consists in the layout of each screen. The View is responsible for informing the View Model Layer about the user’s actions;
     \item \textbf{The View Model} takes care of relevant data for the View layer;
@@ -353,11 +353,11 @@ At the end of each transaction, the system verifies if the seller has any availa
 
 \subsection{Battery Simulation}
 
-Technically, to trade energy by using this system, a prosumer does not need to have a \ac{BESS} (i.e. in the moment there is excess production and if there is demand, the the energy surplus can be sold in real time). However, having a \ac{BESS} will exponentially increase the effectiveness of this system, since users can store the energy surplus throughout the day and sell or use it later. For this reason, and since none of the participants in the field test have a battery, for the purpose of this study the system will simulate a 3000w “virtual battery” for each of them. Before explaining how this simulation is done, the following  information about a Battery Energy Storage System need to be provided:
+Technically, to trade energy by using this system, a prosumer does not need to have a \ac{BESS} (i.e. in the moment there is excess production and if there is demand, the the energy surplus can be sold in real time). However, having a \ac{BESS} will exponentially increase the effectiveness of this system, since users can store the energy surplus throughout the day and sell or use it later. For this reason, and since none of the participants in the field test have a battery, for the purpose of this study the system will simulate a 3000w “virtual battery” for each of them. Before explaining how this simulation is done, the following  information about a \ac{BESS} need to be provided:
 \begin{itemize}
     \item The battery capacity represents the amount of energy that it can store (in kWh). Capacity is different from the power rating, which on the contrary represents the amount of energy (kW) a battery can provide in a given time frame.
     \item The \ac{DOD} defines the degree to which a battery is discharged in relation to its total capacity . In order to not compromise the battery lifetime, it should never reach 100\% or 0\% (the optimal \ac{DOD} should range between 20\% and 80\%). For the purpose of our study, in order to simplify the server logic we did not set a maximum and minimum \ac{DOD} for our “virtual batteries”;
-    \item Batteries consume energy too. The \ac{RTE} is the term used to describe how much of the energy stored in the battery is lost in a “round trip” between the time the energy storage system is charged and then discharged \cite{energymag}. The \ac{RTE} of our virtual batteries is 80\% (i.e. 20\% of the energy stored is lost).
+    \item The \ac{RTE} is the term used to describe how much of the energy stored in the battery is lost in a “round trip” between the time the energy storage system is charged and then discharged \cite{energymag}. The \ac{RTE} of our virtual batteries is 80\% (i.e. 20\% of the energy stored is lost).
 \end{itemize}
 
 In this respect, in order to faithfully simulate the behaviour of an actual battery, the system  multiplies the amount of energy stored in the virtual battery by its \ac{RTE} (i.e. energy stored x 0,8), so to get the amount of energy available for trading. No losses are calculated on the amount of energy sold.
@@ -370,7 +370,7 @@ Blockchain technology, more precisely IOTA, is used here as a payment system. Fo
 Each node on the Tangle runs \ac{IRI} and needs other neighbours (i.e. other nodes running \ac{IRI}, which can be found on the official IOTA discord channel\footnote{\url{https://discordapp.com/invite/rYA7gFa}}) to perform a transaction.  Our node has three neighbors. In other words, the Tangle works as follow: one node performs a transaction and pays for it by validating two other non-validated transactions, called Tips, following the “Tip Selection” process. In order to validate the Tips \ac{IRI} issues the Tip Selection Algorithm Deep Dive that “has to walk a portion of the Tangle (subgraph) twice, stepping according to a rating calculation, selecting an entry point for each walk.”\cite{iotatips}. Since a user has to validate two transactions to get his one approved an efficient network is required, therefore the more active users in the network the better. In addition, it must be pointed out that, in order to perform the tips validation properly, neighbors need to be synchronized with the Tangle, run over a good machine (i.e. a powerful computer that, according with IOTA recommendations, should be at least equipped with a 2 cores processor and 4GB RAM) and have a stable network of neighbors in their turn. For this reason, we only know if a node is good or not by adding it as a neighbour and testing the network behavior. 
 
 
-This way we can perform transactions using the Tangle through the IOTA \ac{API}, having a decentralized network operated by the Tangle that validates transactions between neighbors. Despite there are many public nodes available, we decide to run our own node since, if a public node becomes unstable, we don't have the possibility to fix it and consequently cannot guarantee the transaction will be performed successfully.  \ac{PS} relies on this node to perform the payments and the \ac{POW} is done as a service by the application. The POW on the Tangles is simpler compared to, for instance, the Bitcoin \ac{POW}, therefore it requires less computational power.
+This way we can perform transactions using the Tangle through the IOTA \ac{API}, having a decentralized network operated by the Tangle that validates transactions between neighbors. Despite there are many public nodes available, we decide to run our own node since, if a public node becomes unstable, we don't have the possibility to fix it and consequently cannot guarantee the transaction will be performed successfully.  Power Share relies on this node to perform the payments and the \ac{POW} is done as a service by the application. The POW on the Tangles is simpler compared to, for instance, the Bitcoin \ac{POW}, therefore it requires less computational power.
 
 
 
